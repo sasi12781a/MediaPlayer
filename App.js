@@ -6,7 +6,6 @@ const App = () => {
   useEffect(() => {
     SplashScreen.hide();
   }, []);
-
   return (
     <View>
       <Text>sasi</Text>
