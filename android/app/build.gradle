@@ -1,5 +1,6 @@
 apply plugin: "com.android.application"
-
+apply plugin: 'com.google.gms.google-services'
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
 
@@ -78,6 +79,9 @@ import org.apache.tools.ant.taskdefs.condition.Os
  * ]
  */
 
+project.ext.vectoricons = [
+    iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf' ] // Name of the font files you want to copy
+]
 project.ext.react = [
     enableHermes: false,  // clean and rebuild if changing
 ]
