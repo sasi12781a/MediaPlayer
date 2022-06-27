@@ -52,7 +52,7 @@ const SelectAudioOrVideo = ({navigation}) => {
             }}>
             <Pressable
               style={styles.textContainer}
-              onPress={() => navigation.navigate('VideoList')}>
+              onPress={() => navigation.navigate('VideoHome')}>
               <Text style={styles.text}>Video</Text>
             </Pressable>
           </LinearGradient>

@@ -6,6 +6,9 @@ import LogInScreen from '../Authentication/logIn';
 import SelectAudioOrVideo from '../HomeStack/home';
 import {AudioList} from '../HomeStack/Audio/AudioList';
 import PlayMusic from '../HomeStack/Audio/PlayMusic';
+import VideoHome from '../HomeStack/Video/VideoHome';
+import YouTube from '../HomeStack/Video/YouTube';
+import Player from '../HomeStack/Video/player';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +39,9 @@ const HomeStackNavigation = () => {
         />
         <Stack.Screen name="AudioList" component={AudioList} />
         <Stack.Screen name="PlayMusic" component={PlayMusic} />
+        <Stack.Screen name="VideoHome" component={VideoHome}/>
+        <Stack.Screen name="YouTube" component={YouTube} />
+        <Stack.Screen name="Player" component={Player} />  
       </Stack.Navigator>
     </NavigationContainer>
   );
