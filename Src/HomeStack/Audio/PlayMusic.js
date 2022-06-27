@@ -20,7 +20,6 @@ function PlayMusic({navigation, route}) {
   const [duration, setDuration] = useState(0);
   const [playIcon, setPlayIcon] = useState(true);
   Sound.setCategory('Playback');
-
   const play = () => {
     let summer = new Sound(`${data.song}`, Sound.MAIN_BUNDLE, (err) => {
       //data.song
