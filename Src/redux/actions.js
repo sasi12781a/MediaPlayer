@@ -9,7 +9,6 @@ export const GET_USER_UID="GET_USER_UID";
 export const GET_TOKEN="GET_TOKEN";
 export const REMOVE_TOKEN="REMOVE_TOKEN";
 
-
 export const getToken=(token)=>dispatch=>{
     dispatch({
         type:GET_TOKEN,
