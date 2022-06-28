@@ -79,6 +79,7 @@ const Player = () => {
          onLoad={onLoad}
          onLoadStart={onLoadStart}
          onProgress={onProgress}
+         fullscreenOrientation='portrait'
          paused={paused}
          ref={videoPlayer}
          resizeMode={screenType}
@@ -91,6 +92,7 @@ const Player = () => {
          isLoading={isLoading}
          mainColor="#333"
          onFullScreen={onFullScreen}
+         isFullScreen={enterFullScreen}
          onPaused={onPaused}
          onReplay={onReplay}
          onSeek={onSeek}
