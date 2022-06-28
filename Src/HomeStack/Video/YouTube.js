@@ -1,12 +1,21 @@
 import React, { useState } from "react";
-import {View,TextInput,StyleSheet,Dimensions,Pressable,Text} from "react-native";
+import {View,TextInput,StyleSheet,Dimensions,Pressable,Text,Button} from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import {useSelector, useDispatch} from 'react-redux';
+import Clipboard from "@react-native-clipboard/clipboard";
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
+
+
+
 const YouTube=({navigation})=>{
-    const [videoid,setVideoId]=useState("");
+
+    const setString = () => {
+        const success = Clipboard.setString('This text was copied to the clipboard by React Native');
+        console.log(`Clipboard.setString success? ${success}`);
+      };
+    
     return(
         <View style={styles.container}>
             <LinearGradient
@@ -23,11 +32,13 @@ const YouTube=({navigation})=>{
                         borderWidth: 2,
                         borderColor: '#ffffff',justifyContent:"center",alignItems:'center'}}>
                         <TextInput
-                            style={styles.input}
-                            value={videoid}
-                            onChangeText={setVideoId}
-                            placeholder="Enter VideoId"
+                            multiline={true}
+                            placeholder={'Try pasting here afterwards'}
+                            style={styles.textInput}
                         />
+                    </View>
+                    <View style={styles.buttonBox}>
+                        <Button onPress={setString} title="Copy to clipboard" />
                     </View>
                     <View style={{
                         marginTop: 20,
@@ -73,4 +84,15 @@ const styles = StyleSheet.create({
         elevation: 3,
         backgroundColor: 'black',
       },
+      buttonBox: {
+        maxWidth: 300,
+        marginTop: '1rem'
+      },
+      textInput: {
+        borderColor: '#AAB8C2',
+        borderWidth: 1,
+        height: 50,
+        marginTop: 20,
+        padding: 5
+      }
 })
