@@ -12,11 +12,6 @@ const windowHeight = Dimensions.get('window').height;
 const YouTube=({navigation})=>{
     const [videoid,setVideoId]=useState("");
 
-    const setString = () => {
-    const success = Clipboard.setString('This text was copied to the clipboard by React Native');
-    console.log(`Clipboard.setString success? ${success}`);
-  };
-    
     return(
         <View style={styles.container}>
             <LinearGradient
