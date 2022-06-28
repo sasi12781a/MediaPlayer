@@ -82,7 +82,7 @@ const Player = () => {
          paused={paused}
          ref={videoPlayer}
          resizeMode={screenType}
-         source={{uri:`${route.params.videoid}`}}
+         source={{uri:`${route.params.copiedVideoUrl}`}}
          style={styles.mediaPlayer}
          volume={10}
         />

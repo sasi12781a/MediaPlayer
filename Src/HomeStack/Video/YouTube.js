@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {View,TextInput,StyleSheet,Dimensions,Pressable,Text} from "react-native";
+import {View,TextInput,StyleSheet,Dimensions,TouchableOpacity,Text,Pressable} from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import {useSelector, useDispatch} from 'react-redux';
 import Clipboard from "@react-native-clipboard/clipboard";
@@ -10,7 +10,16 @@ const windowHeight = Dimensions.get('window').height;
 
 
 const YouTube=({navigation})=>{
-    const [videoid,setVideoId]=useState("");
+    const [copiedVideoUrl, setCopiedVideoUrl] = useState('')
+
+    const copyToClipboard = () => {
+        Clipboard.setString('hello world')
+      }
+    
+      const fetchCopiedText = async () => {
+        const text = await Clipboard.getString()
+        setCopiedVideoUrl(text)
+      }
 
     return(
         <View style={styles.container}>
@@ -29,18 +38,28 @@ const YouTube=({navigation})=>{
                         borderColor: '#ffffff',justifyContent:"center",alignItems:'center'}}>
                         <TextInput
                             style={styles.input}
-                            value={videoid}
-                            onChangeText={setVideoId}
-                            placeholder="VideoId"
+                            value={copiedVideoUrl}
+                            multiline={true}
+                            onChangeText={setCopiedVideoUrl}
+                            placeholder="VideoUrl"
                             selectTextOnFocus={false}
                         />
+                    </View>
+                    
+                    <View style={{marginTop:20,flexDirection:'row'}}>
+                        <TouchableOpacity style={styles.button} onPress={() => copyToClipboard()}>
+                          <Text style={{color:"white",fontWeight: 'bold'}}>CopyClipboard</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.button} onPress={() => fetchCopiedText()}>
+                          <Text style={{color:"white",fontWeight: 'bold'}}>Past</Text>
+                        </TouchableOpacity>
                     </View>
                     <View style={{
                         marginTop: 20,
                         flexDirection: 'row',
                         justifyContent: 'center',
                         alignItems: 'center',}}>
-                        <Pressable style={styles.button} onPress={()=>navigation.navigate('Player',{videoid,})}>
+                        <Pressable style={styles.button} onPress={()=>navigation.navigate('Player',{copiedVideoUrl,})}>
                             <Text style={{color:"white",fontWeight: 'bold'}}>Play</Text>
                         </Pressable>
                     </View>
@@ -72,9 +91,10 @@ const styles = StyleSheet.create({
       },
     button: {
         alignItems: 'center',
+        marginLeft:10,
         justifyContent: 'center',
         paddingVertical: 12,
-        paddingHorizontal: 60,
+        paddingHorizontal: 40,
         borderRadius: 4,
         elevation: 3,
         backgroundColor: 'black',
