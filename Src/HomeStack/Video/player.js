@@ -13,65 +13,65 @@ const windowHeight = Dimensions.get('window').height;
 const Player = () => {
     const route = useRoute();
     console.log(route.params.copiedVideoUrl)
-    const videoPlayer=useRef(null);
-    const [currentTime,setCurrentTime]=useState(0);
-    const [duration,setDuration]=useState(0);
-    const [isFullScreen,setIsFullScreen]=useState(false);
-    const [isLoading,setIsLoading]=useState(true);
-    const [paused,setPaused]=useState(false);
-    const [playerState,setPlayerState]=useState(PLAYER_STATES.PLAYING);
-    const [screenType,setScreenType]=useState("content");
-    const onSeek=(seek)=>{
-        videoPlayer.current.seek(seek);
-    };
+    // const videoPlayer=useRef(null);
+    // const [currentTime,setCurrentTime]=useState(0);
+    // const [duration,setDuration]=useState(0);
+    // const [isFullScreen,setIsFullScreen]=useState(false);
+    // const [isLoading,setIsLoading]=useState(true);
+    // const [paused,setPaused]=useState(false);
+    // const [playerState,setPlayerState]=useState(PLAYER_STATES.PLAYING);
+    // const [screenType,setScreenType]=useState("content");
+    // const onSeek=(seek)=>{
+    //     videoPlayer.current.seek(seek);
+    // };
 
-    const onPaused=(playerState)=>{
-        setPaused(!paused);
-        setPlayerState(playerState);
-    };
+    // const onPaused=(playerState)=>{
+    //     setPaused(!paused);
+    //     setPlayerState(playerState);
+    // };
 
-    const onReplay=()=>{
-        setPlayerState(PLAYER_STATES.PLAYING);
-        videoPlayer.current.seek(0);
-    }
+    // const onReplay=()=>{
+    //     setPlayerState(PLAYER_STATES.PLAYING);
+    //     videoPlayer.current.seek(0);
+    // }
 
-    const onProgress=(data)=>{
-        if(!isLoading && playerState!==PLAYER_STATES.ENDED){
-            setCurrentTime(data.currentTime);
-        }
-    };
+    // const onProgress=(data)=>{
+    //     if(!isLoading && playerState!==PLAYER_STATES.ENDED){
+    //         setCurrentTime(data.currentTime);
+    //     }
+    // };
 
-    const onLoad=(data)=>{
-        setDuration(data.duration);
-        setIsLoading(false);
-    };
-    const onLoadStart=(data)=>setIsLoading(true);
-    const onEnd=()=>setPlayerState(PLAYER_STATES.ENDED);
+    // const onLoad=(data)=>{
+    //     setDuration(data.duration);
+    //     setIsLoading(false);
+    // };
+    // const onLoadStart=(data)=>setIsLoading(true);
+    // const onEnd=()=>setPlayerState(PLAYER_STATES.ENDED);
 
-    const onError=()=>Alert.alert("Oh!",eror);
-    const exitFullScreen=()=>{
-        Alert.alert("Exit full screen");
-    };
+    // const onError=()=>Alert.alert("Oh!",eror);
+    // const exitFullScreen=()=>{
+    //     Alert.alert("Exit full screen");
+    // };
 
-    const enterFullScreen=()=>{};
+    // const enterFullScreen=()=>{};
 
-    const onFullScreen=()=>{
-        setIsFullScreen(isFullScreen);
-        if (screenType=="content"){
-            setScreenType('cover');
-        }
-        setScreenType("content");
-    }
+    // const onFullScreen=()=>{
+    //     setIsFullScreen(isFullScreen);
+    //     if (screenType=="content"){
+    //         setScreenType('cover');
+    //     }
+    //     setScreenType("content");
+    // }
 
-    const renderToolbar=()=>{
-        <View>
-            <Text style={styles.toolbar}>
-                toolbar
-            </Text>
-        </View>
-    };
+    // const renderToolbar=()=>{
+    //     <View>
+    //         <Text style={styles.toolbar}>
+    //             toolbar
+    //         </Text>
+    //     </View>
+    // };
 
-    const onSeeking=(currentTime)=>setCurrentTime(currentTime);
+    // const onSeeking=(currentTime)=>setCurrentTime(currentTime);
 
   return (
     <View style={{flex:1}}>

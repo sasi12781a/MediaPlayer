@@ -8,7 +8,6 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 
-
 const YouTube=({navigation})=>{
     const [copiedVideoUrl, setCopiedVideoUrl] = useState('')
 
