@@ -4,11 +4,12 @@ import Video from 'react-native-video';
 import MediaControls,{PLAYER_STATES} from 'react-native-media-controls';
 import { WebView } from 'react-native-webview';
 import { useRoute } from '@react-navigation/native';
-
+import YoutubePlayer from 'react-native-youtube-iframe';
 
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
+
 const Player = () => {
     const route = useRoute();
     console.log(route.params.copiedVideoUrl)
@@ -74,7 +75,14 @@ const Player = () => {
 
   return (
     <View style={{flex:1}}>
-        <Video
+        <YoutubePlayer
+        height={300}
+        play={true}
+        videoId={route.params.copiedVideoUrl}
+    />
+        
+
+        {/* <Video
          onEnd={onEnd}
          onLoad={onLoad}
          onLoadStart={onLoadStart}
@@ -100,7 +108,7 @@ const Player = () => {
          playerState={playerState}
          progress={currentTime}
          toolbar={renderToolbar()}
-        />
+        /> */}
 
     </View>
   );
