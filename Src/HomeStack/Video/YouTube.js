@@ -46,12 +46,12 @@ const YouTube=({navigation})=>{
                     </View>
                     
                     <View style={{marginTop:20,flexDirection:'row'}}>
-                        <TouchableOpacity style={styles.button} onPress={() => copyToClipboard()}>
+                        {/* <TouchableOpacity style={styles.button} onPress={() => copyToClipboard()}>
                           <Text style={{color:"white",fontWeight: 'bold'}}>CopyClipboard</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.button} onPress={() => fetchCopiedText()}>
-                          <Text style={{color:"white",fontWeight: 'bold'}}>Past</Text>
-                        </TouchableOpacity>
+                        </TouchableOpacity> */}
+                      <TouchableOpacity style={styles.button} onPress={() => fetchCopiedText()}>
+                        <Text style={{color:"white",fontWeight: 'bold'}}>Past</Text>
+                      </TouchableOpacity>
                     </View>
                     <View style={{
                         marginTop: 20,
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
         marginLeft:10,
         justifyContent: 'center',
         paddingVertical: 12,
-        paddingHorizontal: 40,
+        paddingHorizontal: 60,
         borderRadius: 4,
         elevation: 3,
         backgroundColor: 'black',

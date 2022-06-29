@@ -1,6 +1,7 @@
 import React from "react";
 import {View,Text,Pressable,StyleSheet} from "react-native";
 import LinearGradient from 'react-native-linear-gradient';
+import { VideoList } from "./videolist";
 
 const VideoHome=({navigation})=>{
     return(
@@ -21,7 +22,7 @@ const VideoHome=({navigation})=>{
                     height: 50,
                     paddingTop: 8,}}>
                     
-                    <Pressable style={styles.textContainer}>
+                    <Pressable style={styles.textContainer} onPress={() => navigation.navigate('VideoList')}>
                         <Text style={styles.text}>
                             Video
                         </Text>
