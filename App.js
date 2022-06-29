@@ -12,7 +12,7 @@ const AppWrapper = () => {
   const storeData = useSelector(state => state);
   const token = storeData.userReducer.token;
   const dispatch = useDispatch();
-  const sasi= "";
+
   useEffect(() => {
     getData();
   });
