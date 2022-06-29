@@ -103,18 +103,6 @@ function PlayMusic({navigation, route}) {
 
       </View>
     </LinearGradient>
-
-    // <View>
-    //   <Button title="play" onPress={() => { play() }} />
-    //   <Button title="pause" onPress={() => { music.pause() }} />
-    //   <Button title="play" onPress={() => { music.play() }} />
-    //   <Button title="stop" onPress={() => { music.stop() }} />
-    //   <Button title="setVolume high" onPress={() => { setVolume('+') }} />
-    //   <Button title="setVolume Low" onPress={() => { setVolume("-") }} />
-    // <Button title="setCurrentTime" onPress={() => { music.setCurrentTime(100) }} />
-    // <Button title="isPlaying" onPress={() => { console.log(music.isPlaying()) }} />
-    // <Text>{second}  / Total Second {duration}</Text>
-    // </View>
   );
 }
 export default PlayMusic;

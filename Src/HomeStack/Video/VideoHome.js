@@ -1,9 +1,13 @@
+/* eslint-disable keyword-spacing */
+/* eslint-disable quotes */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable prettier/prettier */
 import React from "react";
 import {View,Text,Pressable,StyleSheet} from "react-native";
 import LinearGradient from 'react-native-linear-gradient';
-import { VideoList } from "./videolist";
 
-const VideoHome=({navigation})=>{
+const VideoHome = ({navigation})=>{
     return(
         <View style={{flex:1}}>
             <LinearGradient
@@ -15,12 +19,14 @@ const VideoHome=({navigation})=>{
                     colors={['#000428', '#004e92']}
                     start={{x: 0, y: 0}}
                     end={{x: 1, y: 1}}
+                    
+                    
                     style={{
                     width: '80%',
                     borderRadius: 30,
                     marginBottom: 20,
                     height: 50,
-                    paddingTop: 8,}}>
+                    paddingTop: 8}}>
                     
                     <Pressable style={styles.textContainer} onPress={() => navigation.navigate('VideoList')}>
                         <Text style={styles.text}>
@@ -33,13 +39,15 @@ const VideoHome=({navigation})=>{
                     colors={['#000428', '#004e92']}
                     start={{x: 0, y: 0}}
                     end={{x: 1, y: 1}}
+                    
                     style={{
                     width: '80%',
                     borderRadius: 30,
                     marginBottom: 20,
                     height: 50,
+                    // eslint-disable-next-line comma-dangle
                     paddingTop: 8,}}>
-                    
+
                     <Pressable style={styles.textContainer} onPress={() => navigation.navigate('YouTube')}>
                         <Text style={styles.text}>
                             YouTube
@@ -49,8 +57,8 @@ const VideoHome=({navigation})=>{
                 
             </LinearGradient>
         </View>
-    )
-}
+    );
+};
 
 export default VideoHome;
 

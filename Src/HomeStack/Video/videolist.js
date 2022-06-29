@@ -1,5 +1,12 @@
-import React, { useState } from "react";
-import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity } from "react-native";
+/* eslint-disable semi */
+/* eslint-disable no-sequences */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable comma-dangle */
+/* eslint-disable quotes */
+/* eslint-disable prettier/prettier */
+import React, { useState } from 'react';
+import { FlatList, SafeAreaView, StyleSheet, Text, TouchableOpacity } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 
 
