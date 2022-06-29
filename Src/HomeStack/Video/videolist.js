@@ -26,7 +26,7 @@ const DATA = [
   {
     id: "3",
     title: "third Video",
-    video:require('../../assets/video3.mp4')
+    video:require('../../assets/video_3.mp4')
     //'https://static.videezy.com/system/resources/previews/000/022/005/original/cartoon-seamless-rural-landscape-footage.mp4'
    
   },
