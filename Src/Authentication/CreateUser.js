@@ -32,6 +32,7 @@ function CreateUserScreen() {
         await auth()
           .createUserWithEmailAndPassword(email, password)
           .then(function (res) {
+            Alert.alert("user created");
             res.user.updateProfile({
               displayName: fname + ' ' + sname,
               phoneNumber: number,
@@ -176,7 +177,7 @@ function CreateUserScreen() {
               style={styles.input}
               value={cp}
               onChangeText={SetCp}
-              placeholder="Reenter password "
+              placeholder="Renter password "
               autoCompleteType="off"
             />
           </View>
