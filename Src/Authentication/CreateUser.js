@@ -40,7 +40,7 @@ function CreateUserScreen() {
           });
       } catch (e) {
         if (e.code === 'auth/invalid-email') {
-          return Alert.alert('Enter valid email');
+          return Alert.alert('Enter valid mail');
         } else if (e.code === 'auth/weak-password') {
           return Alert.alert('Password is short');
         } else if (e.code === 'auth/email-already-in-use') {
