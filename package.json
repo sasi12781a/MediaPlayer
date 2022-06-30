@@ -17,6 +17,7 @@
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.2",
     "i": "^0.3.7",
+    "ignore-warnings": "^0.2.1",
     "install": "^0.13.0",
     "npm": "^8.13.1",
     "react": "17.0.2",
