@@ -17,24 +17,24 @@ import auth from '@react-native-firebase/auth';
 import {Provider} from 'react-redux';
 import {Store} from '../redux/store';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import {useRoute} from '@react-navigation/native';
 import {useSelector, useDispatch} from 'react-redux';
 import {setEmail, setPassword, getUserUid} from '../redux/actions';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
+
 function LogInScreen({navigation}) {
+  const route = useRoute();
+  const number=route.params;
+  
   const dispatch = useDispatch();
   const {email, password} = useSelector(state => state.userReducer);
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  // eslint-disable-next-line no-shadow
   const signin = (email, password) => {
-    // eslint-disable-next-line eqeqeq
+    console.log(number)
     if (email.length == 0) {
       Alert.alert('Enter Email');
-      // eslint-disable-next-line eqeqeq
     } else if (password.length == 0) {
       Alert.alert('Enter Password');
     } else {
@@ -42,6 +42,7 @@ function LogInScreen({navigation}) {
         .signInWithEmailAndPassword(email, password)
         .then(function (result) {
           const value = result.user.uid;
+          console.log(result.user);
           dispatch(getUserUid(value));
           AsyncStorage.setItem('token', value);
         })

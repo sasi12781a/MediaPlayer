@@ -15,7 +15,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import auth from '@react-native-firebase/auth';
 import {useSelector} from 'react-redux';
 
-function CreateUserScreen() {
+function CreateUserScreen({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [fname, SetFname] = useState('');
@@ -35,8 +35,8 @@ function CreateUserScreen() {
             Alert.alert("user created");
             res.user.updateProfile({
               displayName: fname + ' ' + sname,
-              phoneNumber: number,
             });
+            navigation.navigate('LogIn');
           });
       } catch (e) {
         if (e.code === 'auth/invalid-email') {
@@ -184,7 +184,7 @@ function CreateUserScreen() {
 
           <Pressable
             style={styles.button}
-            onPress={() => NewUser(email, password)}>
+            onPress={() => {NewUser(email, password)}}>
             <Text style={styles.text}>Create User</Text>
           </Pressable>
         </View>
