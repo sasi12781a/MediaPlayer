@@ -26,13 +26,9 @@ const windowHeight = Dimensions.get('window').height;
 
 
 function LogInScreen({navigation}) {
-  const route = useRoute();
-  const number=route.params;
-  
   const dispatch = useDispatch();
   const {email, password} = useSelector(state => state.userReducer);
   const signin = (email, password) => {
-    console.log(number)
     if (email.length == 0) {
       Alert.alert('Enter Email');
     } else if (password.length == 0) {
