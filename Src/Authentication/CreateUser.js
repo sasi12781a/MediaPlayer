@@ -1,6 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable no-shadow */
-/* eslint-disable no-unused-vars */
 import LinearGradient from 'react-native-linear-gradient';
 import React, {useState} from 'react';
 import {
