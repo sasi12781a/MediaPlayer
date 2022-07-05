@@ -38,7 +38,7 @@ function LogInScreen({navigation}) {
         .signInWithEmailAndPassword(email, password)
         .then(function (result) {
           const value = result.user.uid;
-          console.log(result.user);
+          console.log(result.user.displayName);
           dispatch(getUserUid(value));
         })
         .catch(function (e) {
