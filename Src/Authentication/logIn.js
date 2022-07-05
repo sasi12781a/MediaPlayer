@@ -15,7 +15,7 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import auth from '@react-native-firebase/auth';
 import {Provider} from 'react-redux';
-import {Store} from '../redux/store';
+import { store } from '../redux/store';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useRoute} from '@react-navigation/native';
 import {useSelector, useDispatch} from 'react-redux';
@@ -40,7 +40,6 @@ function LogInScreen({navigation}) {
           const value = result.user.uid;
           console.log(result.user);
           dispatch(getUserUid(value));
-          AsyncStorage.setItem('token', value);
         })
         .catch(function (e) {
           if (e.code === 'auth/user-not-found') {
@@ -58,7 +57,7 @@ function LogInScreen({navigation}) {
   };
 
   return (
-    <Provider store={Store}>
+    <Provider store={store}>
       <View style={styles.container}>
         <LinearGradient
           colors={['#000428', '#004e92']}

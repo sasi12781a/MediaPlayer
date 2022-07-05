@@ -5,13 +5,13 @@ import LinearGradient from 'react-native-linear-gradient';
 import {useDispatch} from 'react-redux';
 import {removeToken} from '../redux/actions';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { getUserUid } from '../redux/actions';
 
 const SelectAudioOrVideo = ({navigation}) => {
   const dispatch = useDispatch();
 
   function signOut() {
-    const val = AsyncStorage.removeItem('token');
-    dispatch(removeToken(val));
+    dispatch(getUserUid(''));
   }
 
   return (

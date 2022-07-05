@@ -1,7 +1,3 @@
-/* eslint-disable semi */
-/* eslint-disable quotes */
-/* eslint-disable space-infix-ops */
-/* eslint-disable prettier/prettier */
 export const SET_USER_Email = 'SET_USER_Email';
 export const SET_USER_PASSWORD="SET_USER_PASSWORD";
 export const GET_USER_UID="GET_USER_UID";
