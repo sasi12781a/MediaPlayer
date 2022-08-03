@@ -1,3 +1,5 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable eqeqeq */
 import LinearGradient from 'react-native-linear-gradient';
 import React from 'react';
 import {
@@ -14,19 +16,17 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import auth from '@react-native-firebase/auth';
 import {Provider} from 'react-redux';
-import { store } from '../redux/store';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {useRoute} from '@react-navigation/native';
+import {store} from '../redux/store';
 import {useSelector, useDispatch} from 'react-redux';
 import {setEmail, setPassword, getUserUid} from '../redux/actions';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-
 function LogInScreen({navigation}) {
   const dispatch = useDispatch();
   const {email, password} = useSelector(state => state.userReducer);
+  // eslint-disable-next-line no-shadow
   const signin = (email, password) => {
     if (email.length == 0) {
       Alert.alert('Enter Email');
