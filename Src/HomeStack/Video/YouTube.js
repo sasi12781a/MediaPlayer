@@ -1,13 +1,3 @@
-/* eslint-disable eol-last */
-/* eslint-disable comma-dangle */
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable keyword-spacing */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable semi */
-/* eslint-disable space-infix-ops */
-/* eslint-disable no-unused-vars */
-/* eslint-disable prettier/prettier */
-/* eslint-disable quotes */
 import React, { useState } from "react";
 import {View,TextInput,StyleSheet,Dimensions,TouchableOpacity,Text,Pressable} from "react-native";
 import LinearGradient from "react-native-linear-gradient";
@@ -20,11 +10,6 @@ const windowHeight = Dimensions.get('window').height;
 
 const YouTube=({navigation})=>{
     const [copiedVideoUrl, setCopiedVideoUrl] = useState('')
-
-    const copyToClipboard = () => {
-        Clipboard.setString('hello world')
-      }
-    
       const fetchCopiedText = async () => {
         const text = await Clipboard.getString()
         setCopiedVideoUrl(text)
