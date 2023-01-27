@@ -22,9 +22,14 @@ function CreateUserScreen({navigation}) {
   const uid = useSelector(state => state.userReducer);
 
   const NewUser = async (email, password) => {
-    if (password !== cp) {
+
+    
+    if (email == '' || password =='') {
+      return Alert.alert('Please enter input value')
+    }else if(cp!=password){
       return Alert.alert("Passwords don't match.");
-    } else {
+    }
+    else {
       try {
         await auth()
           .createUserWithEmailAndPassword(email, password)

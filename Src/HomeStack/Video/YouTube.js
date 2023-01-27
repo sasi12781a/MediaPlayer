@@ -42,7 +42,7 @@ const YouTube=({navigation})=>{
                     
                     <View style={{marginTop:20,flexDirection:'row'}}>
                       <TouchableOpacity style={styles.button} onPress={() => fetchCopiedText()}>
-                        <Text style={{color:"white",fontWeight: 'bold'}}>Past</Text>
+                        <Text style={{color:"white",fontWeight: 'bold'}}>Paste</Text>
                       </TouchableOpacity>
                     </View>
                     <View style={{
